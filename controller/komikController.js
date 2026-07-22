@@ -44,3 +44,15 @@ async function updateKomik(req, res) {
         console.error(`Error updating komik with id ${id}:`, err.message);
         res.status(500).json({ error: 'Internal Server Error' });
     }
+}
+
+async function deleteKomik(req, res) {
+    const { id } = req.params;
+
+module.exports = {
+    getAllKomik,
+    getKomikById,
+    createKomik,
+    updateKomik,
+    deleteKomik
+};
