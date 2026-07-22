@@ -35,4 +35,9 @@ async function updateKomik(req, res) {
         if (!komik) {
             return res.status(404).json({ error: 'Komik not found' });
         }
-        
+        komik.title = title;
+        komik.description = description;
+        komik.author = author;
+        await komik.save();
+        res.status(200).json(komik);
+    }catch (err) {
