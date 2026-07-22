@@ -41,3 +41,6 @@ async function updateKomik(req, res) {
         await komik.save();
         res.status(200).json(komik);
     }catch (err) {
+        console.error(`Error updating komik with id ${id}:`, err.message);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
