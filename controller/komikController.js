@@ -23,3 +23,7 @@ async function getKomikById(req, res) {
         res.status(500).json({ error: 'Internal Server Error' });
     }
 }
+
+async function createKomik(req, res) {
+}
+
